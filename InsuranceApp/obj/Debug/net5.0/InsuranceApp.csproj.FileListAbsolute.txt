@@ -46,3 +46,6 @@ C:\Users\seantal\source\repos\InsuranceApp\InsuranceApp\InsuranceApp\obj\Debug\n
 C:\Users\seantal\source\repos\InsuranceApp\InsuranceApp\InsuranceApp\obj\Debug\net5.0\Razor\Areas\Broker\Views\Home\Index.cshtml.g.cs
 C:\Users\seantal\source\repos\InsuranceApp\InsuranceApp\InsuranceApp\obj\Debug\net5.0\Razor\Areas\Broker\Views\Home\ListLimits.cshtml.g.cs
 C:\Users\seantal\source\repos\InsuranceApp\InsuranceApp\InsuranceApp\obj\Debug\net5.0\Razor\Areas\Broker\Views\Home\Secret.cshtml.g.cs
+C:\Users\seantal\source\repos\InsuranceApp\InsuranceApp\InsuranceApp\obj\Debug\net5.0\Razor\Areas\Broker\Views\Home\ListCovers.cshtml.g.cs
+C:\Users\seantal\source\repos\InsuranceApp\InsuranceApp\InsuranceApp\obj\Debug\net5.0\Razor\Areas\Broker\Views\Policy\Calculate.cshtml.g.cs
+C:\Users\seantal\source\repos\InsuranceApp\InsuranceApp\InsuranceApp\obj\Debug\net5.0\Razor\Areas\Broker\Views\Policy\Index.cshtml.g.cs

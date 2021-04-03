@@ -38,11 +38,23 @@ namespace InsuranceApp.Areas.Controllers
         public async Task<IActionResult> ListLimits()
         {
             var client = await _clientFactory.GetClientWithToken(HttpContext);
-            
+
             var getAllResponse = await client.GetAsync(MicroservicesLinks.Limits.GetAll);
             var getAllContent = await getAllResponse.Content.ReadFromJsonAsync<List<LimitResponse>>();
 
             return View("ListLimits", getAllContent);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Broker")]
+        public async Task<IActionResult> ListCovers()
+        {
+            var client = await _clientFactory.GetClientWithToken(HttpContext);
+
+            var getAllResponse = await client.GetAsync(MicroservicesLinks.Covers.GetAll);
+            var getAllContent = await getAllResponse.Content.ReadFromJsonAsync<List<CoverResponse>>();
+
+            return View("ListCovers", getAllContent);
         }
     }
 }

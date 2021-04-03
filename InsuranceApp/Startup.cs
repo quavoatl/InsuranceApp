@@ -20,14 +20,7 @@ namespace InsuranceApp
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpClient(); //"certificate"
-                // .ConfigureHttpMessageHandlerBuilder(opt =>
-                // {
-                //     var handler = new HttpClientHandler();
-                //     handler.ServerCertificateCustomValidationCallback =
-                //         (sender, cert, chain, sslPolicyErrors) => { return true; };
-                // });
-            
+            services.AddHttpClient(); 
             services.AddAuthentication(config =>
                 {
                     config.DefaultScheme = "Cookies";
@@ -46,6 +39,7 @@ namespace InsuranceApp
 
                     config.Scope.Add(ClaimsHelpers.ROLES_KEY);
                     config.Scope.Add("broker_limits_rest_api");
+                    config.Scope.Add("broker_covers_rest_api");
                     config.ClaimActions.MapUniqueJsonKey(ClaimsHelpers.ROLE,
                         ClaimsHelpers.ROLE,
                         ClaimsHelpers.ROLE);

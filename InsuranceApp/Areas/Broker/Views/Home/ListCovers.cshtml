@@ -1,0 +1,45 @@
+﻿@model System.Collections.Generic.List<InsuranceApp.Contracts.ResponseObjects.CoverResponse>
+
+@{
+    Layout = null;
+}
+
+<h2>List Covers View</h2>
+
+<table>
+
+    <tr>
+        <td>
+            BrokerId
+        </td>
+        <td>
+            CoverId
+        </td>
+        <td>
+            Type
+        </td>
+        <td>
+            LimitMultiplier
+        </td>
+    </tr>
+
+    @{
+        foreach (var cover in @Model)
+        {
+            <tr>
+                <td>
+                    @cover.BrokerId
+                </td>
+                <td>
+                    @cover.CoverId
+                </td>
+                <td>
+                    @cover.Type
+                </td>
+                <td>
+                    @cover.LimitMultiplier
+                </td>
+            </tr>
+        }
+    }
+</table>

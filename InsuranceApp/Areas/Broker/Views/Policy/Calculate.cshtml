@@ -1,0 +1,88 @@
+﻿@model InsuranceApp.Areas.Broker.ViewModels.CalculatePolicyViewModel
+
+@{
+    Layout = null;
+    var cover = @Model.Cover;
+}
+
+<h2>Selected Cover</h2>
+
+<table>
+
+    <tr>
+        <td>
+            BrokerId
+        </td>
+        <td>
+            CoverId
+        </td>
+        <td>
+            Type
+        </td>
+        <td>
+            LimitMultiplier
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @Model.Cover.BrokerId
+        </td>
+        <td>
+            @Model.Cover.CoverId
+        </td>
+        <td>
+            @Model.Cover.Type
+        </td>
+        <td>
+            @Model.Cover.LimitMultiplier
+        </td>
+    </tr>
+</table>
+
+<br>
+<h2>Payable premium for each limit</h2>
+<table>
+
+    <tr>
+        <td>
+            BrokerId
+        </td>
+        <td>
+            LimitId
+        </td>
+        <td>
+            Value
+        </td>
+        <td>
+            CoverType
+        </td>
+        <td>
+            Payable
+        </td>
+    </tr>
+
+    @{
+        foreach (var limit in @Model.Limits)
+        {
+            var sum = limit.Value * @Model.Cover.LimitMultiplier;
+            <tr>
+                <td>
+                    @limit.BrokerId
+                </td>
+                <td>
+                    @limit.LimitId
+                </td>
+                <td>
+                    @limit.Value
+                </td>
+                <td>
+                    @limit.CoverType
+                </td>
+                <td>
+                   @sum
+                </td>
+            </tr>
+        }
+    }
+</table>
