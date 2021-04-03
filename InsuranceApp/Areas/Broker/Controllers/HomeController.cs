@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using InsuranceApp.Contracts;
 using InsuranceApp.Contracts.ResponseObjects;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -38,7 +39,7 @@ namespace InsuranceApp.Areas.Controllers
         {
             var client = await _clientFactory.GetClientWithToken(HttpContext);
             
-            var getAllResponse = await client.GetAsync("https://localhost:5001/api/v1/limits");
+            var getAllResponse = await client.GetAsync(MicroservicesLinks.Limits.GetAll);
             var getAllContent = await getAllResponse.Content.ReadFromJsonAsync<List<LimitResponse>>();
 
             return View("ListLimits", getAllContent);
